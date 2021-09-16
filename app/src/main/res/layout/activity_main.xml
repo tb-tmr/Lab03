@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/activity_main_layout">
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/center"-->
+<!--        android:text="Hello World!"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/topleft"-->
+<!--        android:layout_width="@dimen/length"-->
+<!--        android:layout_height="@dimen/length"-->
+<!--        android:text="Top Left"-->
+<!--        android:tag="topLeft"-->
+<!--        android:gravity="center"-->
+<!--        android:textSize="@dimen/textsize"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"/>-->
+<!--    <TextView-->
+<!--        android:id="@+id/topright"-->
+<!--        android:layout_width="@dimen/length"-->
+<!--        android:layout_height="@dimen/length"-->
+<!--        android:text="Top Right"-->
+<!--        android:tag="topRight"-->
+<!--        android:gravity="center"-->
+<!--        android:textSize="@dimen/textsize"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"/>-->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/topleft"
+        android:layout_width="@dimen/length"
+        android:layout_height="@dimen/length"
+        android:text="Top Left"
+        android:tag="topLeft"
+        android:gravity="center"
+        android:textSize="@dimen/textsize"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/topright"
+        android:layout_width="@dimen/length"
+        android:layout_height="@dimen/length"
+        android:text="Top Right"
+        android:tag="topRight"
+        android:gravity="center"
+        android:textSize="@dimen/textsize"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bottomright"
+        android:layout_width="@dimen/length"
+        android:layout_height="@dimen/length"
+        android:text="Bottom Right"
+        android:tag="botRight"
+        android:gravity="center"
+        android:textSize="@dimen/textsize"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bottomleft"
+        android:layout_width="@dimen/length"
+        android:layout_height="@dimen/length"
+        android:text="Bottom Left"
+        android:tag="botLeft"
+        android:gravity="center"
+        android:textSize="@dimen/textsize"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/seekb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:min="5"
+        android:max="100"
+        android:progressTint="@color/teal_200"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    //-->
+<!--    //    String TAG = "com.tradan.lab03.sharedprefs";-->
+<!--    //    Button bRight, bLeft;-->
+<!--    //    TextView tLeft, tRight;-->
+<!--    //    SeekBar seekBar;-->
+<!--    //    TextView[] views;-->
+<!--    //    SharedPreferences sharedPreferences;-->
+<!--    //    SharedPreferences.Editor editor;-->
+<!--    //    ConstraintLayout layout;-->
+<!--    //    long startTime, clicks;-->
+<!--    //    float cPS;-->
+<!--    //    @Override-->
+<!--    //    protected void onCreate(Bundle savedInstanceState) {-->
+<!--    //        super.onCreate(savedInstanceState);-->
+<!--    //        setContentView(R.layout.activity_main);-->
+<!--    //        bRight = findViewById(R.id.bottomright_button);-->
+<!--    //        bLeft = findViewById(R.id.bottomleft_button);-->
+<!--    //        tLeft = findViewById(R.id.topleft_textview);-->
+<!--    //        tRight = findViewById(R.id.topright_textview);-->
+<!--    //        seekBar = findViewById(R.id.seekbar);-->
+<!--    //        views = new TextView[]{bRight,bLeft,tRight,tLeft};-->
+<!--    //        layout = findViewById(R.id.activity_main_layout);-->
+<!--    //        bRight.setOnClickListener(this);-->
+<!--    //        bLeft.setOnClickListener(this);-->
+<!--    //        tLeft.setOnClickListener(this);-->
+<!--    //        tRight.setOnClickListener(this);-->
+<!--    //        sharedPreferences = getSharedPreferences(TAG,MODE_PRIVATE);-->
+<!--    //        editor = sharedPreferences.edit();-->
+<!--    //        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {-->
+<!--    //            int lastProgress;-->
+<!--    //            @Override-->
+<!--    //            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {-->
+<!--    //                for (TextView x:views) {x.setTextSize(progress);}-->
+<!--    //            }-->
+<!--    //-->
+<!--    //            @Override-->
+<!--    //            public void onStartTrackingTouch(SeekBar seekBar) {//record state-->
+<!--    //                lastProgress = seekBar.getProgress();-->
+<!--    //            }-->
+<!--    //-->
+<!--    //            @Override-->
+<!--    //            public void onStopTrackingTouch(SeekBar seekBar) {//pop snackbar-->
+<!--    //                Snackbar snackbar = Snackbar.make(layout,-->
+<!--    //                        "Font Size Changed To " + seekBar.getProgress() + "sp",-->
+<!--    //                        Snackbar.LENGTH_LONG);-->
+<!--    //                snackbar.setAction("UNDO",-->
+<!--    //                        new View.OnClickListener() {-->
+<!--    //                            @Override-->
+<!--    //                            public void onClick(View v) {-->
+<!--    //                                seekBar.setProgress(lastProgress);-->
+<!--    //                                for (TextView x:views) {x.setTextSize(lastProgress);}-->
+<!--    //                                Snackbar.make(layout,"Font Size Reverted Back To " + lastProgress-->
+<!--    //                                        + "sp", Snackbar.LENGTH_LONG);-->
+<!--    //                            }-->
+<!--    //                        }-->
+<!--    //                );-->
+<!--    //                snackbar.setActionTextColor(Color.BLUE);-->
+<!--    //                View snackBarView = snackbar.getView();-->
+<!--    //                TextView textView = snackBarView.findViewById(R.id.snackbar_text);-->
+<!--    //                textView.setTextColor(Color.WHITE);-->
+<!--    //                snackbar.show();-->
+<!--    //            }-->
+<!--    //        });-->
+<!--    //        layout.setOnLongClickListener(new View.OnLongClickListener() {-->
+<!--    //            @Override-->
+<!--    //            public boolean onLongClick(View v) {-->
+<!--    //                editor.clear().apply();-->
+<!--    //                setInitialValues();-->
+<!--    //                return false;-->
+<!--    //            }-->
+<!--    //        });-->
+<!--    //        setInitialValues();-->
+<!--    //        startTime = System.currentTimeMillis();-->
+<!--    //    }-->
+<!--    //-->
+<!--    //    private void setInitialValues() {-->
+<!--    //        for (TextView x:views) {-->
+<!--    //            x.setText(sharedPreferences.getString(x.getTag().toString(),"0"));-->
+<!--    //        }-->
+<!--    //        seekBar.setProgress(30);-->
+<!--    //    }-->
+<!--    //-->
+<!--    //    @Override-->
+<!--    //    public void onClick(View v) {-->
+<!--    //        TextView x = (TextView)v;-->
+<!--    //        x.setText(""+(Integer.parseInt(x.getText().toString())+1));-->
+<!--    //        editor.putString(x.getTag().toString(),x.getText().toString()).apply();-->
+<!--    //        cPS = ++clicks/((System.currentTimeMillis()-startTime)/1000f);-->
+<!--    //        Toast.makeText(this,"" +cPS, Toast.LENGTH_SHORT).show();-->
+<!--    //    }-->
+<!--    //-->
+<!--    //    @Override-->
+<!--    //    protected void onResume() {-->
+<!--    //        super.onResume();-->
+<!--    //        setInitialValues();-->
+<!--    //    }-->
+<!--    //-->
